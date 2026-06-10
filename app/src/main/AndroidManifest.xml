@@ -16,9 +16,13 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity
+            android:name=".WelcomeActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.Eventora">
+            android:theme="@style/Theme.App.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
