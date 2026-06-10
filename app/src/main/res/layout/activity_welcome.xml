@@ -30,7 +30,7 @@
             android:layout_marginTop="30dp"
             android:gravity="center"
             android:lineSpacingExtra="4dp"
-            android:text="Your collage Plug in where you \nplan your events like \na pro!"
+            android:text="Your campus plug in where you \nplan your events like \na pro!"
             android:textColor="#000000"
             android:textSize="25sp"
             android:textStyle="italic" />
