@@ -14,3 +14,7 @@ Smart College Event Management App
 
 <img src="app/Screenshots/login.png" width="300">
 
+## Register Screen
+
+<img src="app/Screenshots/Register.png" width="300">
+
