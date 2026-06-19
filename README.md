@@ -24,6 +24,6 @@ Smart College Event Management App
 
 ## Firebase Connectivity
 
-<img src="app/Screenshots/FirebaseConnectivity.png" width="300">
+<img src="app/Screenshots/FirebaseConnectivity.png" width="900">
 
 
