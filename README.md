@@ -22,7 +22,8 @@ Smart College Event Management App
 
 <img src="app/Screenshots/Login_Validated.png" width="300">
 
-## Validated Register Screen
+## Firebase Connectivity
 
-<img src="app/Screenshots/Register_Validated.png" width="300">
+<img src="app/Screenshots/FirebaseConnectivity.png" width="300">
+
 
