@@ -22,6 +22,10 @@ Smart College Event Management App
 
 <img src="app/Screenshots/Login_Validated.png" width="300">
 
+## Student Home Screen
+
+<img src="app/Screenshots/StudentHome.png" width="300">
+
 ## Realtime database
 
 <img src="app/Screenshots/RealtimeDatabase.png" width="300">
