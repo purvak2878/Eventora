@@ -18,3 +18,12 @@ Smart College Event Management App
 
 <img src="app/Screenshots/Register.png" width="300">
 
+## Validated Login Screen
+
+<img src="app/Screenshots/Login_Validated.png" width="300">
+
+## Realtime database
+
+<img src="app/Screenshots/RealtimeDatabase.png" width="300">
+
+
