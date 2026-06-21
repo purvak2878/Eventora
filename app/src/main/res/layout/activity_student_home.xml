@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcome_bg"
+    android:orientation="vertical"
+    android:padding="24dp">
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Student"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="180dp"
+        android:textColor="#111827"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Name"
+        android:textColor="#1F2937"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Email"
+        android:textColor="#1F2937"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/txtWhatsapp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="WhatsApp"
+        android:textColor="#1F2937"
+        android:textSize="20sp" />
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#8F19BA"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
+</LinearLayout>

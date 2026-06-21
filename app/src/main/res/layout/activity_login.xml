@@ -134,9 +134,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New student?"
-                    android:textColor="#0048FF"
+                    android:textColor="#605B5B"
                     android:textSize="14sp"
                     />
+                    <TextView
+                        android:id="@+id/txtRegisterHere"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Register here"
+                        android:textColor="#0048FF"
+                        android:textSize="14sp"
+                        />
                 </LinearLayout>
                 <TextView
                     android:id="@+id/txtOrLogin"
