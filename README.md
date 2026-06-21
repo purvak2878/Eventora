@@ -22,8 +22,8 @@ Smart College Event Management App
 
 <img src="app/Screenshots/Login_Validated.png" width="300">
 
-## Firebase Connectivity
+## Realtime database
 
-<img src="app/Screenshots/FirebaseConnectivity.png" width="900">
+<img src="app/Screenshots/RealtimeDatabase.png" width="300">
 
 
