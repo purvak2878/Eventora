@@ -8,7 +8,7 @@ import android.os.Looper;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
-    private static final long SPLASH_DELAY_MS = 2000L;
+    private static final long SPLASH_DELAY_MS = 8000L;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
