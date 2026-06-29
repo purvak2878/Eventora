@@ -12,22 +12,22 @@ Smart College Event Management App
 
 ## login Screen
 
-<img src="app/Screenshots/login.png" width="300">
+<img src="ap
+ p/Screenshots/login.png" width="300">
 
 ## Register Screen
 
 <img src="app/Screenshots/Register.png" width="300">
 
-## Validated Login Screen
+## sidebar 
 
-<img src="app/Screenshots/Login_Validated.png" width="300">
+<img src="ap
+ p/Screenshots/SideBar.png" width="300">
 
-## Student Home Screen
+## TopBar
 
-<img src="app/Screenshots/StudentHome.png" width="300">
+<img src="app/Screenshots/TopBar.png" width="300">
 
-## Realtime database
-
-Please direct to app/Screenshot folder to view the Realtime Database Screenshot
+Note: to see the remaining screenshots and screenrecording go to "App/Screenshots".
 
 
