@@ -21,8 +21,7 @@ Smart College Event Management App
 
 ## sidebar 
 
-<img src="ap
- p/Screenshots/SideBar.png" width="300">
+<img src="app/Screenshots/SideBar.png" width="300">
 
 ## TopBar
 
