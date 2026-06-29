@@ -28,6 +28,6 @@ Smart College Event Management App
 
 ## Realtime database
 
-<img src="app/Screenshots/RealtimeDatabase.png" width="300">
+Please direct to app/Screenshot folder to view the Realtime Database Screenshot
 
 
