@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F6FB"
+    android:padding="24dp">
+    <TextView
+        android:id="@+id/txtAdminWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome Admin"
+        android:textColor="#111827"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eventora Admin Panel"
+        android:textColor="#6B7280"
+        android:textSize="15sp"
+        android:layout_marginTop="6dp" />
+    <Button
+        android:id="@+id/btnCreateEvent"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Create Event"
+        android:textAllCaps="false"
+        android:layout_marginTop="30dp" />
+    <Button
+        android:id="@+id/btnManageEvents"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Manage Events"
+        android:textAllCaps="false"
+        android:layout_marginTop="14dp" />
+    <Button
+        android:id="@+id/btnAdminLogout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:layout_marginTop="30dp" />
+</LinearLayout>
