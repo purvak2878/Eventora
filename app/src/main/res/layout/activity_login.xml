@@ -216,6 +216,15 @@
                               android:textStyle="bold"/>
                       </LinearLayout>
                   </LinearLayout>
+                <TextView
+                    android:id="@+id/txtAdminLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="Admin Login"
+                    android:backgroundTint="#FFFFFF"
+                    android:textColor="#0008FF"
+                    android:textSize="16sp"/>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

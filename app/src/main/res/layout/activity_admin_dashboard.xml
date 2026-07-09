@@ -3,21 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F3F6FB"
+    android:background="@drawable/norm_bg"
     android:padding="24dp">
     <TextView
         android:id="@+id/txtAdminWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Welcome Admin"
-        android:textColor="#111827"
+        android:textColor="#230028"
         android:textSize="28sp"
         android:textStyle="bold" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Eventora Admin Panel"
-        android:textColor="#6B7280"
+        android:textColor="#303240"
         android:textSize="15sp"
         android:layout_marginTop="6dp" />
     <Button
@@ -33,12 +33,14 @@
         android:layout_height="55dp"
         android:text="Manage Events"
         android:textAllCaps="false"
-        android:layout_marginTop="14dp" />
+        android:layout_marginTop="14dp"/>
     <Button
         android:id="@+id/btnAdminLogout"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="55dp"
+        android:layout_marginStart="90dp"
         android:text="Logout"
         android:textAllCaps="false"
-        android:layout_marginTop="30dp" />
+        android:layout_gravity="bottom"
+        android:layout_marginTop="400dp" />
 </LinearLayout>

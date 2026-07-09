@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         LoginPassword = findViewById(R.id.edtPassword);
         LoginButton = findViewById(R.id.btnLogin);
 
+
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
 
@@ -40,6 +41,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+        TextView txtAdminLogin = findViewById(R.id.txtAdminLogin);
+        txtAdminLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, AdminLoginActivity.class);
                 startActivity(intent);
             }
         });
