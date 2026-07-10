@@ -31,14 +31,17 @@ Smart College Event Management App
 
 <img src="app/Screenshots/AdminLogin.png" width="300">
 
-## Admin Dashboard
-
-<img src="app/Screenshots/AdminDashboard.png" width="300">
-
 ## OTP Dialog
 
 <img src="app/Screenshots/OTPDialog.png" width="300">
 
+## Admin Dashboard
+
+<img src="app/Screenshots/AdminDashboard.png" width="300">
+
+## Create Category page
+
+<img src="app/Screenshots/CreateCategory.png" width="300">
 
 Note: to see the remaining screenshots and screenrecording go to "App/Screenshots".
 
