@@ -11,6 +11,7 @@ public class StudentHome extends StudentBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_home);
+
         setupStudentPanel("Home");
     }
     @Override

@@ -3,7 +3,7 @@
     android:id="@+id/studentSidebar"
     android:layout_width="230dp"
     android:layout_height="match_parent"
-    android:background="#F982FF"
+    android:background="#E98CFA"
     android:orientation="vertical"
     android:padding="18dp">
     <LinearLayout

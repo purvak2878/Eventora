@@ -6,13 +6,17 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class AdminDashboardActivity extends AppCompatActivity {
     TextView txtAdminWelcome;
-    Button btnCreateEvent, btnManageEvents, btnAdminLogout;
+    Button btnCreateEvent,btnHome,btnCategory, btnManageEvents, btnAdminLogout;
     FirebaseAuth firebaseAuth;
 
     @Override
@@ -20,21 +24,36 @@ public class AdminDashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
 
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
         txtAdminWelcome = findViewById(R.id.txtAdminWelcome);
-        btnCreateEvent = findViewById(R.id.btnCreateEvent);
-        btnManageEvents = findViewById(R.id.btnManageEvents);
+        btnHome=findViewById(R.id.tabHome);
+        btnCategory=findViewById(R.id.tabCategories);
+        btnCreateEvent = findViewById(R.id.tabCreateEvent);
+        btnManageEvents = findViewById(R.id.tabManageEvents);
         btnAdminLogout = findViewById(R.id.btnAdminLogout);
 
         firebaseAuth = FirebaseAuth.getInstance();
         checkAdminSession();
-
-        btnCreateEvent.setOnClickListener(view -> {
-            Toast.makeText(this, "Create Event page will be developed next",
+        btnHome.setOnClickListener(view-> {
+            Toast.makeText(this,"You are already on Home tab",
                     Toast.LENGTH_SHORT).show();
         });
+        btnCategory.setOnClickListener(view->{
+            Intent intent = new Intent(AdminDashboardActivity.this,CreateCategoryActivity.class);
+            startActivity(intent);
+        });
+        btnCreateEvent.setOnClickListener(view -> {
+            Intent intent = new Intent(AdminDashboardActivity.this,CreateEventAcitivity.class);
+            startActivity(intent);
+        });
         btnManageEvents.setOnClickListener(view -> {
-            Toast.makeText(this, "Manage Events page will be developed later",
-                    Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(AdminDashboardActivity.this,ManageEventActivity.class);
+            startActivity(intent);
         });
         btnAdminLogout.setOnClickListener(view -> {
             firebaseAuth.signOut();

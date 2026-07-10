@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/norm_bg">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Category"
+            android:textColor="#111827"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add event categories for admin and student panel"
+            android:textColor="#6E7181"
+            android:textSize="15sp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="24dp" />
+        <EditText
+            android:id="@+id/edtCategoryName"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Category Name"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#111827"
+            android:textColorHint="#9CA3AF" />
+        <Spinner
+            android:id="@+id/spinnerCategoryStatus"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#FFFFFF"
+            android:padding="10dp"
+            android:layout_marginTop="14dp" />
+        <Button
+            android:id="@+id/btnAddCategory"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:layout_marginStart="100dp"
+            android:text="Add Category"
+            android:textAllCaps="false"
+            android:layout_marginTop="24dp" />
+        <TextView
+            android:id="@+id/txtBackToAdminDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to Admin Dashboard"
+            android:textColor="#2563EB"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="30dp" />
+    </LinearLayout>
+</ScrollView>

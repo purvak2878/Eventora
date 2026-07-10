@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/norm_bg">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Event"
+            android:textColor="#111827"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add a new college event for students"
+            android:textColor="#6B7280"
+            android:textSize="15sp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="24dp" />
+        <EditText
+            android:id="@+id/edtEventName"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Event Name"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#111827"
+            android:textColorHint="#9CA3AF" />
+        <Spinner
+            android:id="@+id/spinnerEventCategory"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#FFFFFF"
+            android:padding="10dp"
+            android:layout_marginTop="14dp" />
+        <EditText
+            android:id="@+id/edtEventDate"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Select Event Date"
+            android:focusable="false"
+            android:clickable="true"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#111827"
+            android:textColorHint="#9CA3AF"
+            android:layout_marginTop="14dp" />
+        <EditText
+            android:id="@+id/edtEventTime"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Select Event Time"
+            android:focusable="false"
+            android:clickable="true"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#111827"
+            android:textColorHint="#9CA3AF"
+            android:layout_marginTop="14dp" />
+        <EditText
+            android:id="@+id/edtVenue"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Venue"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#111827"
+            android:textColorHint="#9CA3AF"
+            android:layout_marginTop="14dp" />
+        <EditText
+            android:id="@+id/edtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:hint="Description"
+            android:gravity="top"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#111827"
+            android:textColorHint="#9CA3AF"
+            android:layout_marginTop="14dp" />
+        <EditText
+            android:id="@+id/edtRegistrationFee"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Registration Fee / Free"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#111827"
+            android:textColorHint="#9CA3AF"
+            android:layout_marginTop="14dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Maximum Participants"
+            android:textColor="#111827"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="8dp" />
+        <NumberPicker
+            android:id="@+id/numberPickerParticipants"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#FFFFFF" />
+        <EditText
+            android:id="@+id/edtImageUrl"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Event Image URL"
+            android:inputType="textUri"
+            android:padding="14dp"
+            android:background="#FFFFFF"
+            android:textColor="#111827"
+            android:textColorHint="#9CA3AF"
+            android:layout_marginTop="14dp" />
+        <Spinner
+            android:id="@+id/spinnerEventStatus"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#FFFFFF"
+            android:padding="10dp"
+            android:layout_marginTop="14dp" />
+        <Button
+            android:id="@+id/btnCreateEvent"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Create Event"
+            android:textAllCaps="false"
+            android:layout_marginTop="24dp" />
+        <TextView
+            android:id="@+id/txtBackToDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to Admin Dashboard"
+            android:textColor="#2563EB"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="30dp" />
+    </LinearLayout>
+</ScrollView>
