@@ -25,7 +25,7 @@ import java.util.HashMap;
 public class CreateCategoryActivity extends AppCompatActivity {
     EditText edtCategoryName;
     Spinner spinnerCategoryStatus;
-    Button btnAddCategory;
+    Button btnAddCategory,btnManageCategory;
     TextView txtBackToAdminDashboard;
     FirebaseAuth firebaseAuth;
     DatabaseReference categoryReference;
@@ -45,6 +45,7 @@ public class CreateCategoryActivity extends AppCompatActivity {
         edtCategoryName = findViewById(R.id.edtCategoryName);
         spinnerCategoryStatus = findViewById(R.id.spinnerCategoryStatus);
         btnAddCategory = findViewById(R.id.btnAddCategory);
+        btnManageCategory = findViewById(R.id.btnManageCategory);
         txtBackToAdminDashboard = findViewById(R.id.txtBackToAdminDashboard);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -58,6 +59,11 @@ public class CreateCategoryActivity extends AppCompatActivity {
 
         txtBackToAdminDashboard.setOnClickListener(view -> {
             Intent intent = new Intent(CreateCategoryActivity.this, AdminDashboardActivity.class);
+            startActivity(intent);
+            finish();
+        });
+        btnManageCategory.setOnClickListener(view -> {
+            Intent intent = new Intent(CreateCategoryActivity.this, ManageCategoryActivity.class);
             startActivity(intent);
             finish();
         });

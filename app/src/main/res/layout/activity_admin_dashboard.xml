@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -90,27 +91,45 @@
             android:textStyle="bold"
             android:layout_marginTop="28dp" />
 
-        <TextView
-            android:id="@+id/cardTotalEvents"
+        <!-- Total Events Card -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total Events\n\nEvents count will be shown later."
-            android:textColor="#111827"
-            android:textSize="17sp"
-            android:padding="18dp"
-            android:background="#CCFFFFFF"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="#CCFFFFFF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp">
 
-        <TextView
-            android:id="@+id/cardActiveEvents"
+            <TextView
+                android:id="@+id/cardTotalEvents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total Events\n\nEvents count will be shown later."
+                android:textColor="#111827"
+                android:textSize="17sp"
+                android:padding="18dp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Active Events Card -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Active Events\n\nActive events will be shown later."
-            android:textColor="#111827"
-            android:textSize="17sp"
-            android:padding="18dp"
-            android:background="#FFFFFF"
-            android:layout_marginTop="14dp" />
+            android:layout_marginTop="14dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp">
+
+            <TextView
+                android:id="@+id/cardActiveEvents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Active Events\n\nActive events will be shown later."
+                android:textColor="#111827"
+                android:textSize="17sp"
+                android:padding="18dp" />
+        </com.google.android.material.card.MaterialCardView>
 
         <View
             android:layout_width="match_parent"
