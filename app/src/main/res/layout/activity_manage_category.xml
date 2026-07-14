@@ -1,29 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:orientation="vertical"
-    android:background="@drawable/norm_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/norm_bg"
+    android:orientation="vertical"
     tools:context=".ManageCategoryActivity">
 
     <TextView
-        android:text="Manage Categories"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_marginTop="30dp"
-        android:textColor="#000000"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerCategories"
-        android:layout_weight="1"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Manage Categories"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnAddNewCategory"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Add New Category"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/txtEmptyCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="No categories found"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCategories"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp" />
+
+    <TextView
+        android:id="@+id/txtBackToDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Back to Admin Dashboard"
+        android:textColor="#2563EB"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
 </LinearLayout>

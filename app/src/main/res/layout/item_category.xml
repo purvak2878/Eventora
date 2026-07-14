@@ -1,48 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:layout_marginBottom="12dp">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        android:id="@+id/txtCategoryName"
-        android:text="Technical"
-        android:textColor="@color/black"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:id="@+id/txtCategoryStatus"
-        android:text="Status : Active"
-        android:textColor="#FF0505"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:id="@+id/txtCategoryId"
-        android:text="ID : CategoryID"
-        android:textColor="#3F1FF2"/>
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp">
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp">
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:id="@+id/btnEditCategory"
-            android:layout_marginStart="300dp"
-            android:src="@drawable/edit_icon"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="25dp"
-            android:id="@+id/btnDeleteCategory"
-            android:src="@drawable/delete_icon"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/txtCategoryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Technical"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtCategoryStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Status : Active"
+            android:textColor="#FF0505"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtCategoryId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="ID : CategoryID"
+            android:textColor="#3F1FF2"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btnEditCategory"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Edit"
+                android:src="@drawable/edit_icon" />
+
+            <ImageView
+                android:id="@+id/btnDeleteCategory"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:contentDescription="Delete"
+                android:src="@drawable/delete_icon" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>
