@@ -43,6 +43,18 @@ Smart College Event Management App
 
 <img src="app/Screenshots/CreateCategory.png" width="300">
 
+## Manage Category page
+
+<img src="app/Screenshots/ManageCategory.png" width="300">
+
+## Edit Category dialog
+
+<img src="app/Screenshots/EditCategoryDialog.png" width="300">
+
+## Delete Category dialog
+
+<img src="app/Screenshots/DeleteCategoryDialog.png" width="300">
+
 Note: to see the remaining screenshots and screenrecording go to "App/Screenshots".
 
 
