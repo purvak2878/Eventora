@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/norm_bg">
+    android:background="@drawable/theme_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,13 +26,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:background="@drawable/card_bg_purple"
                 android:padding="20dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Create Category"
-                    android:textColor="#111827"
+                    android:textColor="#ffffff"
                     android:textSize="28sp"
                     android:textStyle="bold" />
 
@@ -40,7 +41,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Add event categories for admin and student panel"
-                    android:textColor="#6E7181"
+                    android:textColor="#FFFFFF"
                     android:textSize="15sp"
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="24dp" />
@@ -51,73 +52,41 @@
                     android:layout_height="55dp"
                     android:hint="Enter Category Name"
                     android:padding="14dp"
-                    android:background="#F3F4F6"
+                    android:background="@drawable/bg_login_input"
                     android:textColor="#111827"
-                    android:textColorHint="#9CA3AF" />
+                    android:textColorHint="#8E8585" />
 
                 <Spinner
                     android:id="@+id/spinnerCategoryStatus"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:background="#F3F4F6"
+                    android:background="@drawable/bg_login_input"
                     android:padding="10dp"
                     android:layout_marginTop="14dp" />
 
                 <Button
                     android:id="@+id/btnAddCategory"
-                    android:layout_width="match_parent"
+                    android:layout_width="180dp"
                     android:layout_height="55dp"
+                    android:layout_marginStart="80dp"
                     android:text="Add Category"
+                    android:textColor="@color/black"
                     android:textAllCaps="false"
+                    android:backgroundTint="#FFFF"
                     android:layout_marginTop="24dp" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
-
-        <!-- Section: Manage Category -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="#FFFFFF"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="4dp"
-            app:strokeWidth="0dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Manage Category"
-                    android:textColor="#111827"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Click here below to manage the existing categories"
-                    android:textColor="#6E7181"
-                    android:textSize="15sp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="24dp" />
-
-                <Button
-                    android:id="@+id/btnManageCategory"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:text="Manage Category"
-                    android:textAllCaps="false"
-                    android:layout_marginTop="19dp" />
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
+        <Button
+            android:id="@+id/btnManageCategory"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="100dp"
+            android:text="Manage Category"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:backgroundTint="#6E10B6"
+            android:layout_marginTop="10dp" />
         <TextView
             android:id="@+id/txtBackToAdminDashboard"
             android:layout_width="match_parent"

@@ -1,46 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/norm_bg">
+    android:background="@drawable/theme_bg">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginTop="30dp"
         android:padding="20dp">
-        <TextView
+
+        <!-- Header Card -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create Event"
-            android:textColor="#111827"
-            android:textSize="28sp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add a new college event for students"
-            android:textColor="#6B7280"
-            android:textSize="15sp"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="6dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg_purple"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Create Event"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Add a new college event for students"
+                    android:textColor="#F3F4F6"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
         <EditText
             android:id="@+id/edtEventName"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:hint="Event Name"
             android:padding="14dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/bg_login_input"
             android:textColor="#111827"
             android:textColorHint="#9CA3AF" />
+
         <Spinner
             android:id="@+id/spinnerEventCategory"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/bg_login_input"
             android:padding="10dp"
             android:layout_marginTop="14dp" />
+
         <EditText
             android:id="@+id/edtEventDate"
             android:layout_width="match_parent"
@@ -49,10 +74,11 @@
             android:focusable="false"
             android:clickable="true"
             android:padding="14dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/bg_login_input"
             android:textColor="#111827"
             android:textColorHint="#9CA3AF"
             android:layout_marginTop="14dp" />
+
         <EditText
             android:id="@+id/edtEventTime"
             android:layout_width="match_parent"
@@ -61,20 +87,22 @@
             android:focusable="false"
             android:clickable="true"
             android:padding="14dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/bg_login_input"
             android:textColor="#111827"
             android:textColorHint="#9CA3AF"
             android:layout_marginTop="14dp" />
+
         <EditText
             android:id="@+id/edtVenue"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:hint="Venue"
             android:padding="14dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/bg_login_input"
             android:textColor="#111827"
             android:textColorHint="#9CA3AF"
             android:layout_marginTop="14dp" />
+
         <EditText
             android:id="@+id/edtDescription"
             android:layout_width="match_parent"
@@ -82,20 +110,22 @@
             android:hint="Description"
             android:gravity="top"
             android:padding="14dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/bg_login_input"
             android:textColor="#111827"
             android:textColorHint="#9CA3AF"
             android:layout_marginTop="14dp" />
+
         <EditText
             android:id="@+id/edtRegistrationFee"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:hint="Registration Fee / Free"
             android:padding="14dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/bg_login_input"
             android:textColor="#111827"
             android:textColorHint="#9CA3AF"
             android:layout_marginTop="14dp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -105,11 +135,13 @@
             android:textStyle="bold"
             android:layout_marginTop="18dp"
             android:layout_marginBottom="8dp" />
+
         <NumberPicker
             android:id="@+id/numberPickerParticipants"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:background="#FFFFFF" />
+
         <EditText
             android:id="@+id/edtImageUrl"
             android:layout_width="match_parent"
@@ -117,24 +149,36 @@
             android:hint="Event Image URL"
             android:inputType="textUri"
             android:padding="14dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/bg_login_input"
             android:textColor="#111827"
             android:textColorHint="#9CA3AF"
             android:layout_marginTop="14dp" />
+
         <Spinner
             android:id="@+id/spinnerEventStatus"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/bg_login_input"
             android:padding="10dp"
             android:layout_marginTop="14dp" />
+
         <Button
             android:id="@+id/btnCreateEvent"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:text="Create Event"
+            android:backgroundTint="#7711AB"
             android:textAllCaps="false"
             android:layout_marginTop="24dp" />
+
+        <Button
+            android:id="@+id/btnManageEvent"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Manage Event"
+            android:backgroundTint="#7711AB"
+            android:textAllCaps="false"
+            android:layout_marginTop="20dp" />
         <TextView
             android:id="@+id/txtBackToDashboard"
             android:layout_width="match_parent"

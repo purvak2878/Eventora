@@ -1,45 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#FFFFFF">
-    <TextView
+    app:cardCornerRadius="24dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Verify OTP"
-        android:textColor="#111827"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center" />
-    <TextView
-        android:id="@+id/txtOtpPhoneInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="OTP sent to your mobile number"
-        android:textColor="#6B7280"
-        android:textSize="14sp"
-        android:gravity="center"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp" />
-    <EditText
-        android:id="@+id/edtAdminOtp"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Enter 6 digit OTP"
-        android:inputType="number"
-        android:maxLength="6"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textColor="#111827"
-        android:textColorHint="#9CA3AF"
-        android:background="#F3F6FB" />
-    <Button
-        android:id="@+id/btnVerifyOtp"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:text="Verify OTP"
-        android:textAllCaps="false"
-        android:layout_marginTop="20dp" />
-</LinearLayout>
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verify OTP"
+            android:textColor="#111827"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txtOtpPhoneInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OTP sent to your mobile number"
+            android:textColor="#6B7280"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp" />
+
+        <EditText
+            android:id="@+id/edtAdminOtp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Enter 6 digit OTP"
+            android:inputType="number"
+            android:maxLength="6"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#111827"
+            android:textColorHint="#9CA3AF"
+            android:background="#F3F6FB" />
+
+        <Button
+            android:id="@+id/btnVerifyOtp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Verify OTP"
+            android:textAllCaps="false"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

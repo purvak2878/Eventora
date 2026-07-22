@@ -2,8 +2,13 @@ package com.example.eventora;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,6 +33,7 @@ public class AdminLoginActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     String VerificationId;
     String adminPhoneNumber;
+    PhoneAuthProvider.ForceResendingToken resendToken;
     Dialog otpDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,26 +72,31 @@ public class AdminLoginActivity extends AppCompatActivity {
                     adminPhone.requestFocus();
                     return;
                 }
-                sendOtp(adminPhoneNumber);
+                sendOtp(adminPhoneNumber, resendToken);
             }
         });
     }
-    private void sendOtp(String phoneNumber){
-        adminSendOtp.setEnabled(true);
+    private void sendOtp(String phoneNumber, PhoneAuthProvider.ForceResendingToken token){
+        adminSendOtp.setEnabled(false);
         adminSendOtp.setText("Sending OTP..");
 
-        PhoneAuthOptions Options = PhoneAuthOptions.newBuilder(firebaseAuth)
+        PhoneAuthOptions.Builder builder = PhoneAuthOptions.newBuilder(firebaseAuth)
                 .setPhoneNumber(phoneNumber)
                 .setTimeout(60L, TimeUnit.SECONDS)
                 .setActivity(this)
-                .setCallbacks(phoneAuthcallbacks)
-                .build();
+                .setCallbacks(phoneAuthcallbacks);
 
-        PhoneAuthProvider.verifyPhoneNumber(Options);
+        if (token != null) {
+            builder.setForceResendingToken(token);
+        }
+
+        PhoneAuthProvider.verifyPhoneNumber(builder.build());
     }
     private final PhoneAuthProvider.OnVerificationStateChangedCallbacks phoneAuthcallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         @Override
         public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+            adminSendOtp.setEnabled(true);
+            adminSendOtp.setText("Send OTP");
             Toast.makeText(AdminLoginActivity.this, "OTP Verified automatically", Toast.LENGTH_LONG).show();
             signInWithPhoneCredential(phoneAuthCredential);
         }
@@ -94,21 +105,42 @@ public class AdminLoginActivity extends AppCompatActivity {
         public void onVerificationFailed(@NonNull FirebaseException e) {
             adminSendOtp.setEnabled(true);
             adminSendOtp.setText("Send OTP");
-            Toast.makeText(AdminLoginActivity.this, "OTP Failed" + e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(AdminLoginActivity.this, "OTP Failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
 
         @Override
         public void onCodeSent(@NonNull String verificationIdFromFirebase, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             VerificationId = verificationIdFromFirebase;
+            resendToken = forceResendingToken;
+            adminSendOtp.setEnabled(true);
             adminSendOtp.setText("Resend OTP");
             Toast.makeText(AdminLoginActivity.this, "OTP sent successfully", Toast.LENGTH_LONG).show();
             showOTPDialog(adminPhoneNumber);
         }
     };
     private void showOTPDialog(String phoneNumber){
+        if (otpDialog != null && otpDialog.isShowing()) {
+            // Update info if dialog is already showing
+            TextView OTPPhoneinfo = otpDialog.findViewById(R.id.txtOtpPhoneInfo);
+            if (OTPPhoneinfo != null) {
+                OTPPhoneinfo.setText("OTP sent to " + phoneNumber);
+            }
+            return;
+        }
+
         otpDialog = new Dialog(AdminLoginActivity.this);
         otpDialog.setContentView(R.layout.dialog_admin_otp);
         otpDialog.setCancelable(true);
+
+        if (otpDialog.getWindow() != null) {
+            otpDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            
+            WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+            lp.copyFrom(otpDialog.getWindow().getAttributes());
+            lp.width = (int) (getResources().getDisplayMetrics().widthPixels * 0.90);
+            lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+            otpDialog.getWindow().setAttributes(lp);
+        }
 
         TextView OTPPhoneinfo = otpDialog.findViewById(R.id.txtOtpPhoneInfo);
         EditText AdminOTP = otpDialog.findViewById(R.id.edtAdminOtp);

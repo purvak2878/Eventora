@@ -4,8 +4,11 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,8 +36,10 @@ public class ManageCategoryActivity extends AppCompatActivity {
     private Button btnAddNewCategory;
     private TextView txtBackToDashboard, txtEmptyCategories;
     private RecyclerView recyclerCategories;
+    private EditText edtSearchCategories;
     private DatabaseReference categoryReference;
     private ArrayList<CategoryModel> categoryList;
+    private ArrayList<CategoryModel> filteredList;
     private CategoryAdapter categoryAdapter;
 
     @Override
@@ -46,6 +51,7 @@ public class ManageCategoryActivity extends AppCompatActivity {
         categoryReference = FirebaseDatabase.getInstance().getReference("EventCategories");
         setupRecyclerView();
         loadCategoriesFromFirebase();
+        setupSearch();
 
         btnAddNewCategory.setOnClickListener(view -> {
             Intent intent = new Intent(ManageCategoryActivity.this, CreateCategoryActivity.class);
@@ -64,11 +70,13 @@ public class ManageCategoryActivity extends AppCompatActivity {
         txtBackToDashboard = findViewById(R.id.txtBackToDashboard);
         txtEmptyCategories = findViewById(R.id.txtEmptyCategories);
         recyclerCategories = findViewById(R.id.recyclerCategories);
+        edtSearchCategories = findViewById(R.id.edtSearchCategories);
     }
 
     private void setupRecyclerView() {
         categoryList = new ArrayList<>();
-        categoryAdapter = new CategoryAdapter(categoryList, new CategoryAdapter.OnCategoryActionListener() {
+        filteredList = new ArrayList<>();
+        categoryAdapter = new CategoryAdapter(filteredList, new CategoryAdapter.OnCategoryActionListener() {
             @Override
             public void onEdit(CategoryModel category) {
                 showEditCategoryDialog(category);
@@ -94,8 +102,7 @@ public class ManageCategoryActivity extends AppCompatActivity {
                         categoryList.add(category);
                     }
                 }
-                categoryAdapter.notifyDataSetChanged();
-                updateEmptyState();
+                filterCategories();
             }
 
             @Override
@@ -105,8 +112,35 @@ public class ManageCategoryActivity extends AppCompatActivity {
         });
     }
 
+    private void setupSearch() {
+        edtSearchCategories.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                filterCategories();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+    }
+
+    private void filterCategories() {
+        String query = edtSearchCategories.getText().toString().toLowerCase().trim();
+        filteredList.clear();
+        for (CategoryModel category : categoryList) {
+            if (category.categoryName.toLowerCase().contains(query)) {
+                filteredList.add(category);
+            }
+        }
+        categoryAdapter.notifyDataSetChanged();
+        updateEmptyState();
+    }
+
     private void updateEmptyState() {
-        if (categoryList.isEmpty()) {
+        if (filteredList.isEmpty()) {
             txtEmptyCategories.setVisibility(View.VISIBLE);
             recyclerCategories.setVisibility(View.GONE);
         } else {
@@ -119,6 +153,10 @@ public class ManageCategoryActivity extends AppCompatActivity {
         Dialog dialog = new Dialog(ManageCategoryActivity.this);
         dialog.setContentView(R.layout.dialog_edit_category);
         dialog.setCancelable(true);
+
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        }
 
         EditText edtCategoryName = dialog.findViewById(R.id.edtCategoryName);
         Spinner spinnerEditCategoryStatus = dialog.findViewById(R.id.spinnerEditCategoryStatus);
@@ -152,7 +190,12 @@ public class ManageCategoryActivity extends AppCompatActivity {
 
         dialog.show();
         if (dialog.getWindow() != null) {
-            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+            WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+            lp.copyFrom(dialog.getWindow().getAttributes());
+            lp.width = (int) (getResources().getDisplayMetrics().widthPixels * 0.90);
+            lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+            dialog.getWindow().setAttributes(lp);
         }
     }
 
@@ -177,6 +220,10 @@ public class ManageCategoryActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.dialog_delete_category);
         dialog.setCancelable(true);
 
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        }
+
         TextView txtDeleteMessage = dialog.findViewById(R.id.txtDeleteMessage);
         Button btnYes = dialog.findViewById(R.id.btnYes);
         Button btnNo = dialog.findViewById(R.id.btnNo);
@@ -192,7 +239,12 @@ public class ManageCategoryActivity extends AppCompatActivity {
 
         dialog.show();
         if (dialog.getWindow() != null) {
-            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+            WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+            lp.copyFrom(dialog.getWindow().getAttributes());
+            lp.width = (int) (getResources().getDisplayMetrics().widthPixels * 0.90);
+            lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+            dialog.getWindow().setAttributes(lp);
         }
     }
 
