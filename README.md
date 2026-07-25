@@ -12,8 +12,7 @@ Smart College Event Management App
 
 ## login Screen
 
-<img src="ap
- p/Screenshots/login.png" width="300">
+<img src="app/Screenshots/Login.png" width="300">
 
 ## Register Screen
 
@@ -38,6 +37,7 @@ Smart College Event Management App
 ## Admin Dashboard
 
 <img src="app/Screenshots/AdminDashboard.png" width="300">
+<img src="app/Screenshots/AdminDashboard2.png" width="300">
 
 ## Create Category page
 
@@ -54,6 +54,14 @@ Smart College Event Management App
 ## Delete Category dialog
 
 <img src="app/Screenshots/DeleteCategoryDialog.png" width="300">
+
+## Time Picker
+
+<img src="app/Screenshots/TimePicker.png" width="300">
+
+## Date Picker
+
+<img src="app/Screenshots/DatePicker.png" width="300">
 
 Note: to see the remaining screenshots and screenrecording go to "App/Screenshots".
 
