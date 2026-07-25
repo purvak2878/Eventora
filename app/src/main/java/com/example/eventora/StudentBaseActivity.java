@@ -123,7 +123,8 @@ public class StudentBaseActivity extends AppCompatActivity {
 
     private void setupMenuClicks() {
         menuBrowseEvents.setOnClickListener(view-> {
-            Toast.makeText(this,"Browse Events page will open later",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(StudentBaseActivity.this,StudentBrowseEventsActivity.class);
+            startActivity(intent);
         });
         menuMyEvents.setOnClickListener(view->{
             Toast.makeText(this, "My Events page will open later", Toast.LENGTH_SHORT).show();

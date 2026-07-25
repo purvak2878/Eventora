@@ -35,11 +35,38 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/txtEventDateTime"
+            android:id="@+id/txtEventDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="Date &amp; Time: 01/01/2023 | 10:00 AM"
+            android:text="Date: 01/01/2023"
+            android:textColor="#4B5563"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtEventTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Time: 10:00 AM"
+            android:textColor="#4B5563"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtRegistrationFee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Fee: ₹0"
+            android:textColor="#4B5563"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtMaxParticipants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Max Participants: 100"
             android:textColor="#4B5563"
             android:textSize="14sp" />
 

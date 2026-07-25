@@ -246,6 +246,7 @@ public class ManageEventActivity extends AppCompatActivity {
         EditText edtVenue = dialog.findViewById(R.id.edtVenue);
         EditText edtDescription = dialog.findViewById(R.id.edtDescription);
         EditText edtRegistrationFee = dialog.findViewById(R.id.edtRegistrationFee);
+        EditText edtMaxParticipants = dialog.findViewById(R.id.edtMaxParticipants);
         EditText edtImageUrl = dialog.findViewById(R.id.edtImageUrl);
         Spinner spinnerEventStatus = dialog.findViewById(R.id.spinnerEventStatus);
         Button btnUpdateEvent = dialog.findViewById(R.id.btnUpdateEvent);
@@ -257,6 +258,7 @@ public class ManageEventActivity extends AppCompatActivity {
         edtVenue.setText(event.venue);
         edtDescription.setText(event.description);
         edtRegistrationFee.setText(event.registrationFee);
+        edtMaxParticipants.setText(String.valueOf(event.maxParticipants));
         edtImageUrl.setText(event.imageUrl);
 
         // Setup Category Spinner
@@ -325,6 +327,11 @@ public class ManageEventActivity extends AppCompatActivity {
             map.put("venue", edtVenue.getText().toString().trim());
             map.put("description", edtDescription.getText().toString().trim());
             map.put("registrationFee", edtRegistrationFee.getText().toString().trim());
+            try {
+                map.put("maxParticipants", Integer.parseInt(edtMaxParticipants.getText().toString().trim()));
+            } catch (NumberFormatException e) {
+                map.put("maxParticipants", event.maxParticipants);
+            }
             map.put("imageUrl", edtImageUrl.getText().toString().trim());
             map.put("status", spinnerEventStatus.getSelectedItem().toString());
 

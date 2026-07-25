@@ -38,7 +38,10 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         EventModel event = eventList.get(position);
         holder.txtEventName.setText(event.eventName);
         holder.txtEventCategory.setText("Category: " + event.categoryName);
-        holder.txtEventDateTime.setText("Date & Time: " + event.eventDate + " | " + event.eventTime);
+        holder.txtEventDate.setText("Date: " + event.eventDate);
+        holder.txtEventTime.setText("Time: " + event.eventTime);
+        holder.txtRegistrationFee.setText("Fee: " + event.registrationFee);
+        holder.txtMaxParticipants.setText("Max Participants: " + event.maxParticipants);
         holder.txtEventStatus.setText("Status: " + event.status);
 
         holder.btnEditEvent.setOnClickListener(v -> listener.onEdit(event));
@@ -51,14 +54,17 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     }
 
     public static class EventViewHolder extends RecyclerView.ViewHolder {
-        TextView txtEventName, txtEventCategory, txtEventDateTime, txtEventStatus;
+        TextView txtEventName, txtEventCategory, txtEventDate, txtEventTime, txtRegistrationFee, txtMaxParticipants, txtEventStatus;
         ImageView btnEditEvent, btnDeleteEvent;
 
         public EventViewHolder(@NonNull View itemView) {
             super(itemView);
             txtEventName = itemView.findViewById(R.id.txtEventName);
             txtEventCategory = itemView.findViewById(R.id.txtEventCategory);
-            txtEventDateTime = itemView.findViewById(R.id.txtEventDateTime);
+            txtEventDate = itemView.findViewById(R.id.txtEventDate);
+            txtEventTime = itemView.findViewById(R.id.txtEventTime);
+            txtRegistrationFee = itemView.findViewById(R.id.txtRegistrationFee);
+            txtMaxParticipants = itemView.findViewById(R.id.txtMaxParticipants);
             txtEventStatus = itemView.findViewById(R.id.txtEventStatus);
             btnEditEvent = itemView.findViewById(R.id.btnEditEvent);
             btnDeleteEvent = itemView.findViewById(R.id.btnDeleteEvent);
