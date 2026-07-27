@@ -63,6 +63,10 @@ Smart College Event Management App
 
 <img src="app/Screenshots/DatePicker.png" width="300">
 
+## Browse Events
+
+<img src="app/Screenshots/BrowseEvents.png" width="300">
+
 Note: to see the remaining screenshots and screenrecording go to "App/Screenshots".
 
 
